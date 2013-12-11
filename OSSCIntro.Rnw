@@ -41,22 +41,22 @@ The probability density function for the lognormal distribution is:
 Generating some variates, a summary, and some plots below. It is often good practice to separate the code from the results, so the code will be evaluated and echoed in different blocks. The code that will be used is:
 <<'LogData', echo=TRUE, eval=FALSE, message=FALSE, warning=FALSE>>=
 set.seed(764237)
-Data <- rlnorm(10000, meanlog=14, sigmalog=2)
+Data <- rlnorm(10000, meanlog=14, sdlog=.2)
 @
 <<'LogSummary', echo=TRUE, eval=FALSE, message=FALSE, warning=FALSE>>=
 summary(Data)
 @
 <<'Logplot', echo=TRUE, eval=FALSE, message=FALSE, warning=FALSE>>=
-\library(MASS)
+library(MASS)
 truehist(Data, nbins="fd")
-lines(density(Data))
+lines(density(Data), col='red', lwd=2)
 @
 Now to run the code.
 <<'LogData', echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE>>=
 @
 <<'LogSummary', echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE>>=
 @
-<<'Logplot', echo=TRUE, eval=FALSE, message=FALSE, warning=FALSE>>=
+<<'Logplot', echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.height=4>>=
 @
 \clearpage
 \section{References}\label{Refs}

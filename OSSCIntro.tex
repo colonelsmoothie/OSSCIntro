@@ -91,7 +91,7 @@ Generating some variates, a summary, and some plots below. It is often good prac
 \definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlkwd{set.seed}\hlstd{(}\hlnum{764237}\hlstd{)}
-\hlstd{Data} \hlkwb{<-} \hlkwd{rlnorm}\hlstd{(}\hlnum{10000}\hlstd{,} \hlkwc{meanlog} \hlstd{=} \hlnum{14}\hlstd{,} \hlkwc{sigmalog} \hlstd{=} \hlnum{2}\hlstd{)}
+\hlstd{Data} \hlkwb{<-} \hlkwd{rlnorm}\hlstd{(}\hlnum{10000}\hlstd{,} \hlkwc{meanlog} \hlstd{=} \hlnum{14}\hlstd{,} \hlkwc{sdlog} \hlstd{=} \hlnum{0.2}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -107,36 +107,29 @@ Generating some variates, a summary, and some plots below. It is often good prac
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\textbackslash{}\hlkwd{library}(MASS)
-\hlkwd{truehist}(Data, nbins=\hlstr{"fd"})
-\hlkwd{lines}(\hlkwd{density}(Data))
+\hlkwd{library}\hlstd{(MASS)}
+\hlkwd{truehist}\hlstd{(Data,} \hlkwc{nbins} \hlstd{=} \hlstr{"fd"}\hlstd{)}
+\hlkwd{lines}\hlstd{(}\hlkwd{density}\hlstd{(Data),} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{,} \hlkwc{lwd} \hlstd{=} \hlnum{2}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
 
 Now to run the code.
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: unused argument (sigmalog = 2)}}\end{kframe}
-\end{knitrout}
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: object 'Data' not found}}\end{kframe}
-\end{knitrout}
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\textbackslash{}\hlkwd{library}(MASS)
-\hlkwd{truehist}(Data, nbins=\hlstr{"fd"})
-\hlkwd{lines}(\hlkwd{density}(Data))
-\end{alltt}
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  563000 1050000 1200000 1220000 1370000 2780000
+\end{verbatim}
 \end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/Logplot} 
+
 \end{knitrout}
 
 \clearpage
